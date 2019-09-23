@@ -188,15 +188,14 @@ train_data = feature_engineering(train_data)
 n_folds = 10
 params = dict(n_estimators=3000,
               metric=["rmse"],
-              num_leaves=127,
+              num_leaves=31,
               min_data_in_leaf=20,
               learning_rate=0.1,
               min_sum_hessian_in_leaf=0.002,
               colsample_bytree=0.8,
               subsample=0.8,
               reg_alpha=0.0,
-              reg_lambda=0.0,
-              max_bin=511)
+              reg_lambda=0.0)
 
 folds = KFold(n_folds, shuffle=True, random_state=2019)
 oof_df = pd.DataFrame()
